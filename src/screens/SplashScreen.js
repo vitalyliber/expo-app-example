@@ -1,9 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
-export default function SplashScreen({ navigation }) {
+import { authUser } from "../store/user";
+export default function SplashScreen() {
   return (
     <View style={styles.container}>
       <Text>Splash Screen</Text>
-      <Text onPress={() => navigation.replace("Home")}>Open Tabs</Text>
+      <Text onPress={authUser}>Open Tabs</Text>
     </View>
   );
 }
