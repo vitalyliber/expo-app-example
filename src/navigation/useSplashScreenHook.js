@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
+import { syncWithStorage } from "../store/user";
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -15,6 +16,7 @@ export default function useSplashScreenHook() {
       try {
         // Pre-load fonts, make any API calls you need to do here
         await Font.loadAsync(Ionicons.font);
+        await syncWithStorage();
         // Artificially delay for two seconds to simulate a slow loading
         // experience. Please remove this if you copy and paste the code!
         await new Promise((resolve) => setTimeout(resolve, 2000));
