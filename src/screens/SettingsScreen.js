@@ -4,7 +4,9 @@ export default function SettingsScreen() {
   return (
     <View style={styles.container}>
       <Text>Settings Screen</Text>
-      <Text onPress={logoutUser}>Logout</Text>
+      <Text style={styles.logout} onPress={logoutUser}>
+        Logout
+      </Text>
     </View>
   );
 }
@@ -14,5 +16,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  logout: {
+    marginTop: 20,
+    color: "blue",
+    fontWeight: "bold",
   },
 });
