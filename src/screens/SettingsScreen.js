@@ -1,10 +1,13 @@
 import { View, Text, StyleSheet } from "react-native";
 import { logoutUser } from "../store/user";
-export default function SettingsScreen() {
+export default function SettingsScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>Settings Screen</Text>
-      <Text style={styles.logout} onPress={logoutUser}>
+      <Text style={styles.button} onPress={() => navigation.push("Details")}>
+        Details
+      </Text>
+      <Text style={styles.button} onPress={logoutUser}>
         Logout
       </Text>
     </View>
@@ -17,7 +20,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  logout: {
+  button: {
     marginTop: 20,
     color: "blue",
     fontWeight: "bold",
